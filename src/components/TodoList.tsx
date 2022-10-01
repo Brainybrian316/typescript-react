@@ -1,3 +1,5 @@
+import './TodoList.css';
+
 // to make code leaner, we can set pros as an interface
 interface TodoListProps {
 	items: { id: string; text: string }[];
