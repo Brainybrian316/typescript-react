@@ -10,11 +10,17 @@ const App: React.FC = () => {
 		setToDos((prevToDos) => [...prevToDos, { id: Math.random().toString(), text: text }]);
 	};
 
+	const toDoDeleteHandler = (toDoId: string) => {
+		setToDos((prevToDos) => {
+			return prevToDos.filter((todo) => todo.id !== toDoId);
+		});
+	};
+
 	return (
 		<div className="App">
 			{/* pointer to the function */}
 			<NewTodo onAddToDo={toDoAddHandler} />
-			<TodoList items={toDos} />
+			<TodoList items={toDos} onDeleteToDo={toDoDeleteHandler} />
 		</div>
 	);
 };
