@@ -1,10 +1,12 @@
 import TodoList from './components/TodoList';
+import NewTodo from './components/NewTodo';
 
 const App: React.FC = () => {
+	const toDos = [{ id: 't1', text: 'Finish the course' }];
 	return (
 		<div className="App">
-			{/* a component tht adds todo's */}
-			<TodoList />
+			<NewTodo />
+			<TodoList items={toDos} />
 		</div>
 	);
 };
